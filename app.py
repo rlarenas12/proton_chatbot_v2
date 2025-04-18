@@ -13,7 +13,7 @@ st.markdown("Haz preguntas sobre el decreto oficial de la carrera. Por ejemplo: 
 
 # Cargar y procesar el PDF
 with st.spinner("Procesando el decreto..."):
-    loader = PyPDFLoader("14-2025_Decreto.pdf")
+    loader = loader = UnstructuredPDFLoader("14-2025_Decreto.pdf")
     pages = loader.load()
 
     text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=100)

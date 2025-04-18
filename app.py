@@ -1,5 +1,5 @@
 import streamlit as st
-from langchain_community.document_loaders import UnstructuredPDFLoader
+from langchain_community.document_loaders import PDFPlumberLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import FAISS
 from langchain.chains import RetrievalQA
@@ -13,7 +13,7 @@ st.markdown("Haz preguntas sobre el decreto oficial de la carrera. Por ejemplo: 
 
 # Cargar y procesar el PDF
 with st.spinner("Procesando el decreto..."):
-    loader = loader = UnstructuredPDFLoader("14-2025_Decreto.pdf")
+    loader = loader = PDFlumberLoader ("14-2025_Decreto.pdf")
     pages = loader.load()
 
     text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
